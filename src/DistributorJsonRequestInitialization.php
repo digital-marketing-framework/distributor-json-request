@@ -6,8 +6,8 @@ use DigitalMarketingFramework\Core\Initialization;
 use DigitalMarketingFramework\Core\Registry\RegistryDomain;
 use DigitalMarketingFramework\Distributor\Core\DataDispatcher\DataDispatcherInterface;
 use DigitalMarketingFramework\Distributor\Core\Route\RouteInterface;
-use DigitalMarketingFramework\Distributor\JsonRequest\Route\JsonRequestRoute;
 use DigitalMarketingFramework\Distributor\JsonRequest\DataDispatcher\JsonRequestDataDispatcher;
+use DigitalMarketingFramework\Distributor\JsonRequest\Route\JsonRequestRoute;
 
 class DistributorJsonRequestInitialization extends Initialization
 {
