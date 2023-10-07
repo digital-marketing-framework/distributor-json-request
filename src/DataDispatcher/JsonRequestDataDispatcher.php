@@ -11,11 +11,13 @@ class JsonRequestDataDispatcher extends RequestDataDispatcher
     {
         $headers = parent::getDefaultHeaders();
         $headers['Content-Type'] = 'application/json';
+
         return $headers;
     }
 
     /**
-     * @param array<string,string|ValueInterface>
+     * @param array<string,string|ValueInterface> $data
+     *
      * @return array<string,mixed>
      */
     protected function computeValueArray(array $data): array
@@ -23,15 +25,17 @@ class JsonRequestDataDispatcher extends RequestDataDispatcher
         $result = [];
         foreach ($data as $key => $value) {
             if (is_numeric($key)) {
-                $key = (int) $key;
+                $key = (int)$key;
             }
+
             $result[$key] = $value instanceof ValueInterface ? $value->getValue() : $value;
         }
+
         return $result;
     }
 
     /**
-     * @param array<string,string|ValueInterface>
+     * @param array<string,string|ValueInterface> $data
      */
     protected function buildBody(array $data): string
     {
