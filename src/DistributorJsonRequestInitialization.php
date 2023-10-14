@@ -24,8 +24,8 @@ class DistributorJsonRequestInitialization extends Initialization
 
     protected const SCHEMA_MIGRATIONS = [];
 
-    public function __construct()
+    public function __construct(string $packageAlias = '')
     {
-        parent::__construct('distributor-json-request', '1.0.0');
+        parent::__construct('distributor-json-request', '1.0.0', $packageAlias);
     }
 }
