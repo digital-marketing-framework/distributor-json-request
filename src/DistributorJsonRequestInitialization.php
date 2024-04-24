@@ -5,9 +5,9 @@ namespace DigitalMarketingFramework\Distributor\JsonRequest;
 use DigitalMarketingFramework\Core\Initialization;
 use DigitalMarketingFramework\Core\Registry\RegistryDomain;
 use DigitalMarketingFramework\Distributor\Core\DataDispatcher\DataDispatcherInterface;
-use DigitalMarketingFramework\Distributor\Core\Route\RouteInterface;
+use DigitalMarketingFramework\Distributor\Core\Route\OutboundRouteInterface;
 use DigitalMarketingFramework\Distributor\JsonRequest\DataDispatcher\JsonRequestDataDispatcher;
-use DigitalMarketingFramework\Distributor\JsonRequest\Route\JsonRequestRoute;
+use DigitalMarketingFramework\Distributor\JsonRequest\Route\JsonRequestOutboundRoute;
 
 class DistributorJsonRequestInitialization extends Initialization
 {
@@ -16,8 +16,8 @@ class DistributorJsonRequestInitialization extends Initialization
             DataDispatcherInterface::class => [
                 JsonRequestDataDispatcher::class,
             ],
-            RouteInterface::class => [
-                JsonRequestRoute::class,
+            OutboundRouteInterface::class => [
+                JsonRequestOutboundRoute::class,
             ],
         ],
     ];
